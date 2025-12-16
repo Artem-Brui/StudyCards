@@ -1,11 +1,11 @@
+import { Tab } from "./components/shared/Tab/Tab";
 
 function App() {
-
   return (
-   <>
-    <p>slndlnlnflnlksdnsfnsdlnfldfnlsdnfsdlfnsdlksdlngslngsdlgnsklngsndlk</p>
+    <>
+      <Tab />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

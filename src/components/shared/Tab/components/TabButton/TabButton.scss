@@ -1,0 +1,12 @@
+.tabButton {
+  @include text-preset-4-semibold;
+
+  padding: 12px 16px;
+  border-radius: inherit;
+  border: none;
+}
+
+.highlighted {
+ border: inherit;
+ background-color: $yellow-500;
+}
