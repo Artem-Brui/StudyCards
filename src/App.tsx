@@ -1,9 +1,11 @@
-import { Tab } from "./components/shared/Tab/Tab";
+import { Outlet } from "react-router-dom";
+import { Header } from "./components/layout/Header/Header";
 
 function App() {
   return (
     <>
-      <Tab />
+      <Header />
+      <Outlet />
     </>
   );
 }

@@ -1,13 +1,18 @@
-
 .tab {
  width: max-content;
- margin: 10px;
- padding: 4px;
- background-color: $neutral-0;
+ height: 100%;
+ padding: 5px;
  border: 1px solid $neutral-900;
  border-radius: $radius-full;
- box-shadow: 0 2px 1px 0 $neutral-900;
  display: flex;
- gap: 10px;
  align-items: center;
+ gap: 10px;
+}
+
+@include onMobile {
+ .tab {
+  padding: 3px;
+  height: 90%;
+  gap: 3px;
+ }
 }
