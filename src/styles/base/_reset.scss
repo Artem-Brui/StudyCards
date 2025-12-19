@@ -4,6 +4,11 @@
  box-sizing: border-box;
 }
 
+button {
+ background: none;
+ border: none;
+ outline: none;
+}
 
 a {
  text-decoration: none;
@@ -12,4 +17,8 @@ a {
 
 p {
  max-width: 100%;
+}
+
+ul {
+ list-style: none;
 }

@@ -1,78 +1,10 @@
-.card-item {
- margin: 10px;
- width: 397px;
+.card_item-list {
+ @include commonBorder(border);
+
+ width: 400px;
  height: 240px;
- border: 1px solid $neutral-900;
- box-shadow: 1px 1px 0 1px $neutral-900;
  border-radius: $radius-16;
-
- & > * > * {
-  padding: 16px;
- }
-
- & > h3 {
-  @include text-preset-5-regular;
- }
-
-
-}
-
-.card-question {
- height: 24%;
- border-bottom: 1px solid $neutral-900;
-
- & > h3 {
-  @include text-preset-3;
- }
-}
-
-.card-answer {
- height: 52%;
- border-bottom: 1px solid $neutral-900;
-
- & > h5, & > p {
-  @include text-preset-5;
- }
-
- & > h5 {
-  padding-bottom: 6px;
-  opacity: 0.6;
- }
-
- & > p {
-  padding-top: 0;
- }
-}
-
-.card-service {
- display: flex;
- justify-content: space-between;
-
- & > * {
-  box-sizing: content-box;
- }
-}
-
-.card-category, .card-progress {
- border-right: 1px solid $neutral-900;
-}
-
-.card-category {
- padding-inline: 10px;
- flex: none;
-}
-
-.card-progress .card-service-button {
- padding-inline: 8px;
-}
-
-.card-progress {
- flex: 1;
-}
-
-.card-service-button {
- flex: 0 0 10px;
- background-image: url('src/assets/icons/dots.svg');
- background-repeat: no-repeat;
- background-position: center;
+ display: grid;
+ grid-template-columns: auto 1fr auto;
+ grid-template-rows: auto 1fr auto;
 }

@@ -1,30 +1,30 @@
 import type React from "react";
 import "./CardItem.scss";
-import base from "@/assets/base/base.json";
+import { CardQuestion } from "./components/CardQuestion/CardQuestion";
+import { CardAnswer } from "./components/CardAnswer/CardAnswer";
+import { CardCategory } from "./components/CardCategory/CardCategory";
+import { CardProgress } from "./components/CardProgress/CardProgress";
+import { CardServiceButton } from "./components/CardServiceButton/CardServiceButton";
 import type { CardItemType } from "@/assets/base/base";
 
-const cards: CardItemType[] = base;
 
-const card = cards[0];
-export const CardItem: React.FC = () => {
-  const { id, category, question, answer, mastered } = card;
+export type CardType = 'list' | 'study';
+
+type Props = {
+ cardType: CardType;
+ card: CardItemType;
+}
+
+export const CardItem: React.FC<Props> = ({ cardType, card}) => {
+  const { category, question, answer } = card;
 
   return (
-    <div className="card-item">
-      <section className="card-question">
-        <h3>{question}</h3>
-      </section>
-
-      <section className="card-answer">
-        <h5>Answer:</h5>
-        <p>{answer}</p>
-      </section>
-
-      <section className="card-service">
-        <div className="card-category">{category}</div>
-        <div className="card-progress">Progress</div>
-        <div className="card-service-button"></div>
-      </section>
-    </div>
+    <li className={`card_item-${cardType}`}>
+      <CardQuestion cardType={cardType} question={question} />
+      <CardAnswer cardType={cardType} answer={answer} />
+      <CardCategory cardType={cardType} category={category} />
+      <CardProgress cardType={cardType} progress='Progress' />
+      <CardServiceButton />
+    </li>
   );
 };

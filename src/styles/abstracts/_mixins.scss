@@ -1,8 +1,20 @@
+@use '../abstracts/variables' as *;
+
 // media
 @mixin onMobile {
   @media (max-width: 767px) {
     @content;
   }
+}
+
+@mixin onTablet {
+  @media (max-width: 1239px) {
+    @content;
+  }
+}
+
+@mixin commonBorder($prop) {
+ #{$prop}: 1px solid $neutral-900;
 }
 
 // fonts

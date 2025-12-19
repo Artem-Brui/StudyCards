@@ -5,5 +5,12 @@
 
 body {
  @include main-font;
+
  color: $neutral-900;
+ display: flex;
+ justify-content: center;
+
+ & > #root {
+  max-width: 1240px;
+ }
 }

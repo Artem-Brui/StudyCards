@@ -1,0 +1,30 @@
+.cards-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  & > li {
+    flex-basis: 400px;
+  }
+}
+
+@include onTablet {
+  .cards-list {
+    gap: 20px;
+
+    & > li {
+      flex-basis: 340px;
+    }
+  }
+}
+
+@include onMobile {
+  .cards-list {
+    gap: 20px;
+
+    & > li {
+      flex-basis: 340px;
+    }
+  }
+}
