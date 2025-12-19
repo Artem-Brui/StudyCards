@@ -1,7 +1,8 @@
 .tabButton {
   @include text-preset-4-semibold;
 
-  padding: 10px 16px;
+  min-width: max-content;
+  padding: 9px 16px;
   border-radius: inherit;
   border: none;
   outline-offset: 4px;
@@ -14,10 +15,4 @@
 .highlighted {
   box-shadow: 0 0 0 1px $neutral-900;
   background-color: $yellow-500;
-}
-
-@include onMobile {
- .tabButton {
-  padding: 8px 14px;
- }
 }

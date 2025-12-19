@@ -10,7 +10,7 @@ export const Tab: React.FC = () => {
   <div className="tab">
    {pageKeys.map((key) => {
     return (
-     <TabButton pageKey={key} />
+     <TabButton key={key} pageKey={key} />
     )
    })}
    </div>
