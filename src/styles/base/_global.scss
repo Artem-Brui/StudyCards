@@ -14,3 +14,23 @@ body {
   max-width: 1240px;
  }
 }
+
+@include onTablet {
+ body {
+
+ & > #root {
+  max-width: 768px;
+  padding: 32px;
+ }
+}
+}
+
+@include onMobile {
+ body {
+
+ & > #root {
+  max-width: 375px;
+  padding: 16px;
+ }
+}
+}

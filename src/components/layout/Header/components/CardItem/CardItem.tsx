@@ -19,12 +19,12 @@ export const CardItem: React.FC<Props> = ({ cardType, card}) => {
   const { category, question, answer } = card;
 
   return (
-    <li className={`card_item-${cardType}`}>
+    <div className={`card_item-${cardType}`}>
       <CardQuestion cardType={cardType} question={question} />
       <CardAnswer cardType={cardType} answer={answer} />
       <CardCategory cardType={cardType} category={category} />
       <CardProgress cardType={cardType} progress='Progress' />
       <CardServiceButton />
-    </li>
+    </div>
   );
 };

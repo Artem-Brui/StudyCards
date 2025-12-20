@@ -9,9 +9,12 @@ const cards: CardItemType[] = base;
 export const AllCards: React.FC = () => {
   return (
     <ul className="cards-list">
-      {cards.map((card) => (
-        <CardItem key={card.id} cardType="list" card={card} />
-      ))}
+      {/* {cards.map((card) => (
+        <li>
+          <CardItem key={card.id} cardType="list" card={card} />
+        </li>
+      ))} */}
+      <CardItem cardType="list" card={cards[0]} />
     </ul>
   );
 };

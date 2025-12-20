@@ -4,4 +4,10 @@
 
  grid-area: 1 / 1 / 2 / 4;
  padding: 16px;
+
+ & span {
+  @include text-preset-6-regular;
+  
+  margin-left: 3px;
+ }
 }

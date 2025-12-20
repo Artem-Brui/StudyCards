@@ -6,9 +6,3 @@
  align-items: center;
  box-sizing: content-box;
 }
-
-@include onMobile {
- .header {
-  padding-inline: 16px;
- }
-}

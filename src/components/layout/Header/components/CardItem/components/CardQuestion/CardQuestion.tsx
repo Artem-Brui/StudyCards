@@ -1,6 +1,7 @@
 import type React from "react";
 import "./CardQuestion.scss";
 import type { CardType } from "../../CardItem";
+import classNames from "classnames";
 
 type Props = {
   cardType: CardType;
@@ -8,5 +9,12 @@ type Props = {
 };
 
 export const CardQuestion: React.FC<Props> = ({ cardType, question }) => {
-  return <p className={`card_${cardType}_question`}>{question}</p>;
+
+  return (
+    <div className={`card_${cardType}_question`}>
+      <p className={classNames()}>
+        {question}
+      </p>
+    </div>
+  );
 };
