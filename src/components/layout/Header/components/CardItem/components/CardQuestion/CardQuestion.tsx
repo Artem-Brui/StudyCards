@@ -1,20 +1,14 @@
 import type React from "react";
 import "./CardQuestion.scss";
-import type { CardType } from "../../CardItem";
-import classNames from "classnames";
+import { TextContent } from "../TextContent/TextContent";
+import type { cardComponentPropsType } from "../../CardItem";
 
-type Props = {
-  cardType: CardType;
-  question: string;
-};
-
-export const CardQuestion: React.FC<Props> = ({ cardType, question }) => {
-
+export const CardQuestion: React.FC<cardComponentPropsType> = ({ cardComponentProps }) => {
+ const { cardVersion } = cardComponentProps;
+ 
   return (
-    <div className={`card_${cardType}_question`}>
-      <p className={classNames()}>
-        {question}
-      </p>
+    <div className={`card_${cardVersion}_question`}>
+      <TextContent cardComponentProps={cardComponentProps} />
     </div>
   );
 };

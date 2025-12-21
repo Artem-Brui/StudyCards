@@ -1,16 +1,14 @@
 import type React from "react";
 import "./CardCategory.scss";
-import type { CardType } from "../../CardItem";
+import type { cardComponentPropsType } from "../../CardItem";
 
-type Props = {
-  cardType: CardType;
-  category: string;
-};
 
-export const CardCategory: React.FC<Props> = ({ cardType, category }) => {
+export const CardCategory: React.FC<cardComponentPropsType> = ({ cardComponentProps }) => {
+ const { cardVersion, category } = cardComponentProps;
+
   return (
-    <div className={`card_${cardType}_category-container`}>
-      <p className={`card_${cardType}_category`}>{category}</p>
+    <div className={`card_${cardVersion}_category-container`}>
+      <p className={`card_${cardVersion}_category`}>{category}</p>
     </div>
   );
 };

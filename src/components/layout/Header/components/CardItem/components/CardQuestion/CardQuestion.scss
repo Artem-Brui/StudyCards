@@ -1,13 +1,7 @@
 .card_list_question {
- @include commonBorder(border-bottom);
- @include text-preset-3;
+  @include commonBorder(border-bottom);
+  @include text-preset-4-semibold;
 
- grid-area: 1 / 1 / 2 / 4;
- padding: 16px;
-
- & span {
-  @include text-preset-6-regular;
-  
-  margin-left: 3px;
- }
+  grid-area: 1 / 1 / 2 / 4;
+  padding: 16px;
 }
