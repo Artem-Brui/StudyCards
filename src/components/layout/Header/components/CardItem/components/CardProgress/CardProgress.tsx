@@ -1,10 +1,12 @@
 import type React from "react";
 import "./CardProgress.scss";
-import type { cardComponentPropsType } from "../../CardItem";
+import type { CardVersionType } from "../../CardItem";
 
+type CardProgressProps = {
+ cardVersion: CardVersionType;
+}
 
-export const CardProgress: React.FC<cardComponentPropsType> = ({ cardComponentProps }) => {
- const { cardVersion } = cardComponentProps;
+export const CardProgress: React.FC<CardProgressProps> = ({ cardVersion }) => {
 
   return (
     <div className={`card_${cardVersion}_progress-container`}>

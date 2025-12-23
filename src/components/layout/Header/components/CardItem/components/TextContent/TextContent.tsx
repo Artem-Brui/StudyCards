@@ -1,18 +1,54 @@
 import type React from "react";
 import "./TextContent.scss";
-import type { cardComponentPropsType } from "../../CardItem";
+import type { CardVersionType } from "../../CardItem";
+import { useLayoutEffect, useRef, useState } from "react";
 
-export const TextContent: React.FC<cardComponentPropsType> = ({ cardComponentProps }) => {
- const { cardVersion, question } = cardComponentProps;
+type CardTextContentProps = {
+  cardVersion: CardVersionType;
+  text: string;
+};
 
-  const isQuestionLong = question.length > 32;
-  const dots = isQuestionLong ? "..." : "";
-  const textToShow = isQuestionLong ? question.slice(0, 28).trim() : question;
+export const TextContent: React.FC<CardTextContentProps> = ({
+  cardVersion,
+  text,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useLayoutEffect(() => {
+    const paragraphElement = textRef.current;
+
+    if (!paragraphElement) return;
+
+    const isMultiline =
+      paragraphElement.scrollHeight > paragraphElement.clientHeight;
+
+    paragraphElement.dataset.multiline = String(isMultiline);
+  }, [text]);
 
   return (
-    <div className={`card_${cardVersion}_text-content`}>
-      <p>{textToShow + dots}</p>
-      {isQuestionLong && <i className="expand-icon"></i>}
+    <div className={`card_${cardVersion}_text-container`}>
+      <p
+        ref={textRef}
+        data-expanded={isExpanded}
+        className={`card_${cardVersion}_text-content`}
+      >
+        {text}
+      </p>
+      {!isExpanded && (
+        <img
+          className="expand-icon"
+          src="src/assets/icons/angle-down.svg"
+          onClick={() => setIsExpanded(true)}
+        />
+      )}
+      {isExpanded && (
+        <img
+          className="expand-icon"
+          src="src/assets/icons/angle-up.svg"
+          onClick={() => setIsExpanded(false)}
+        />
+      )}
     </div>
   );
 };

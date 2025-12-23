@@ -1,7 +1,18 @@
-.card_list_question {
+.card_list_question-container {
   @include commonBorder(border-bottom);
   @include text-preset-4-semibold;
 
   grid-area: 1 / 1 / 2 / 4;
-  padding: 16px;
 }
+
+@include expandedText (
+ false,
+ ".card_list_question-container",
+ ".card_list_text-container",
+ ".card_list_text-content",
+ ".expand-icon",
+ 16px,
+ 1,
+ "expanded",
+ "multiline"
+)

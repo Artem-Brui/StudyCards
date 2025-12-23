@@ -6,24 +6,13 @@ import base from "@/assets/base/base.json";
 
 const cards: CardItemType[] = base;
 
-type CardVersionType = "list" | "study";
-
-export type CardContentType = CardItemType & {
- cardVersion: CardVersionType;
-}
-
 export const AllCards: React.FC = () => {
   return (
     <ul className="cards-list">
       {cards.map((card) => {
-        const cardContent: CardContentType = {
-            ...card,
-            cardVersion: "list",
-        };
-
         return (
-          <li>
-            <CardItem key={card.id} cardComponentProps={cardContent} />
+          <li key={card.id}>
+            <CardItem cardVersion='list' card={card} />
           </li>
         );
       })}
