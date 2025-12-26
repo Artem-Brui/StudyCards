@@ -2,7 +2,9 @@ $redd: red;
 $rrr: green;
 
 :root {
-font-size: 10px;
+--base-font-size: 10px;
+
+font-size: var(--base-font-size);
 
 // colors
 --neutral-900: #2e1401;

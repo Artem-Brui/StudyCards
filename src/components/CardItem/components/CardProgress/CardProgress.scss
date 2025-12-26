@@ -1,9 +1,0 @@
-.card_list_progress-container {
- @include commonBorder(border-right);
-
- grid-area: 3 / 2 / 4 / 3;
- height: 100%;
- padding-inline: 8px 10px;
- display: flex;
- align-items: center;
-}

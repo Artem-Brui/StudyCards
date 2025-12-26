@@ -1,10 +1,5 @@
 import type React from "react";
-import "./CardItem.scss";
-import { CardQuestion } from "./components/CardQuestion/CardQuestion";
-import { CardAnswer } from "./components/CardAnswer/CardAnswer";
-import { CardCategory } from "./components/CardCategory/CardCategory";
-import { CardProgress } from "./components/CardProgress/CardProgress";
-import { CardServiceButton } from "./components/CardServiceButton/CardServiceButton";
+import styles from "./CardItem.module.scss";
 import type { CardItemType } from "@/assets/base/base";
 
 export type CardVersionType = "list" | "study";
@@ -22,19 +17,12 @@ export const CardItem: React.FC<СardComponentProps> = ({
   const isStudy = cardVersion === 'study';
 
   return (
-    // <div className={`card_item-${cardVersion}`}>
-    //   <CardQuestion cardVersion={cardVersion} question={question} />
-    //   <CardAnswer cardVersion={cardVersion} answer={answer + answer + answer + answer + answer + answer} />
-    //   <CardCategory cardVersion={cardVersion} category={category} />
-    //   <CardProgress cardVersion={cardVersion} />
-    //   <CardServiceButton />
-    // </div>
-    <article>
-      <p>{question}</p>
-      <p>{answer}</p>
-      <p>{category}</p>
-      <p>Progress</p>
-      {!isStudy && <button className="card-service-button"></button>}
+    <article className={styles.card_item} data-version={cardVersion}>
+      <p className={styles.question}>{question}</p>
+      <p className={styles.answer}>{answer}</p>
+      <p className={styles.category}>{category}</p>
+      <p className={styles.progress}>Progress</p>
+      {!isStudy && <button className={styles.service_button}></button>}
     </article>
   );
 };

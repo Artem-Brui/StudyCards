@@ -1,9 +1,0 @@
-.card_item-list {
- @include commonBorder(border);
-
- height: 240px;
- border-radius: $radius-16;
- display: grid;
- grid-template-columns: auto 1fr auto;
- grid-template-rows: 55px 1fr 57px;
-}

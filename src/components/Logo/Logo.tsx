@@ -1,7 +1,7 @@
 import type React from "react";
-import "./Logo.scss";
+import styles from "./Logo.module.scss";
 
 export const Logo: React.FC = () => {
 
- return <div className="logo"></div>
+ return <div className={styles.logo}></div>
 };
