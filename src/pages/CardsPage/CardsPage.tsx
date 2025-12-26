@@ -5,7 +5,9 @@ function CardsPage() {
   return (
     <>
       <Header />
-      <CardsList />
+      <main>
+        <CardsList />
+      </main>
     </>
   );
 }

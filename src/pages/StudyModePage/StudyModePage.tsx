@@ -5,7 +5,9 @@ function StudyModePage() {
   return (
     <>
       <Header />
-      <p>Study Mode</p>
+      <main>
+        <p>Study Mode</p>
+      </main>
     </>
   );
 }

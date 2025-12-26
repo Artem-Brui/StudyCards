@@ -1,49 +1,45 @@
-
 $redd: red;
 $rrr: green;
 
-// colors
-$neutral-900: #2E1401;
-$neutral-600: #6D5B4D;
-$neutral-100: #F7F3F0;
-$neutral-0: #FFFFFF;
-$yellow-500: #F8CB46;
-$blue-400: #92ADEB;
-$blue-600: #5072C7;
-$teal-400: #47D9C9;
-$pink-400: #FC8AE5;
-$pink-500: #F073A3;
-$pink-700: #E11966;
+:root {
+font-size: 10px;
 
-// spacing
-$spacing-0: 0;
-$spacing-25: 2px;
-$spacing-50: 4px;
-$spacing-75: 6px;
-$spacing-100: 8px;
-$spacing-125: 10px;
-$spacing-150: 12px;
-$spacing-200: 16px;
-$spacing-250: 20px;
-$spacing-300: 24px;
-$spacing-400: 32px;
-$spacing-500: 40px;
-$spacing-600: 48px;
-$spacing-800: 64px;
-$spacing-1000: 80px;
-$spacing-1200: 96px;
-$spacing-1400: 112px;
-$spacing-1600: 128px;
-$spacing-1800: 140px;
+// colors
+--neutral-900: #2e1401;
+--neutral-600: #6d5b4d;
+--neutral-100: #f7f3f0;
+--neutral-0: #ffffff;
+--yellow-500: #f8cb46;
+--blue-400: #92adeb;
+--blue-600: #5072c7;
+--teal-400: #47d9c9;
+--pink-400: #fc8ae5;
+--pink-500: #f073a3;
+--pink-700: #e11966;
+}
+
+
+// colors
+$neutral-900: var(--neutral-900);
+$neutral-600: var(--neutral-600);
+$neutral-100: var(--neutral-100);
+$neutral-0: var(--neutral-0);
+$yellow-500: var(--yellow-500);
+$blue-400: var(--blue-400);
+$blue-600: var(--blue-600);
+$teal-400: var(--teal-400);
+$pink-400: var(--pink-400);
+$pink-500: var(--pink-500);
+$pink-700: var(--pink-700);
 
 // radius
 $radius-0: 0;
-$radius-4: 4px;
-$radius-6: 6px;
-$radius-8: 8px;
-$radius-10: 10px;
-$radius-12: 12px;
-$radius-16: 16px;
-$radius-20: 20px;
-$radius-24: 24px;
-$radius-full: 999px;
+$radius-4: 0.4rem;
+$radius-6: 0.6rem;
+$radius-8: 0.8rem;
+$radius-10:.1rem;
+$radius-12: 1.2rem;
+$radius-16: 1.6rem;
+$radius-20: 2.0rem;
+$radius-24: 2.4rem;
+$radius-full: 99.9rem;
