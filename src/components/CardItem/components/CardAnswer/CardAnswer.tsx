@@ -16,7 +16,6 @@ export const CardAnswer: React.FC<CardAnswerProps> = ({
     <div className={`card_${cardVersion}_answer-container`}>
       <p className={"card_answer-title"}>Answer:</p>
       <TextContent cardVersion={cardVersion} text={answer} />
-      {/* <p className={`card_${cardVersion}_answer`}>{answer}</p> */}
     </div>
   );
 };

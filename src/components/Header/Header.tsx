@@ -1,7 +1,7 @@
 import type React from "react";
 import "./Header.scss";
-import { Tab } from "./components/Tab/Tab";
-import { Logo } from "./components/Logo/Logo";
+import { Logo } from "../Logo/Logo";
+import { Tab } from "../Tab/Tab";
 
 export const Header: React.FC = () => {
   return (

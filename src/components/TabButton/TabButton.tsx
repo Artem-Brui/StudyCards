@@ -2,7 +2,7 @@ import type React from "react";
 import "./TabButton.scss";
 import classNames from "classnames";
 import { NavLink, useLocation } from "react-router-dom";
-import { Pages } from "@/components/pages/pageTypes";
+import { Pages } from "@/pages/pageTypes";
 
 type Props = {
  pageKey: keyof typeof Pages;
