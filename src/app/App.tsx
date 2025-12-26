@@ -1,7 +1,4 @@
 import RouterProvider from "./router/RouterProvider";
 
-function App() {
-  return <RouterProvider />;
-}
+export const App = () => <RouterProvider />;
 
-export default App;
