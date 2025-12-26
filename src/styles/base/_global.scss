@@ -9,26 +9,24 @@ body {
  display: flex;
  justify-content: center;
 
- & > #root {
-  max-width: 1240px;
- }
 }
+
+#root {
+  width: 1240px;
+ }
 
 @include onTablet {
- body {
-
- & > #root {
-  max-width: 768px;
-  padding: 32px;
- }
-}
+  #root {
+    width: 768px;
+    padding: 32px;
+   }
 }
 
 @include onMobile {
  body {
 
  & > #root {
-  max-width: 375px;
+  width: 375px;
   padding: 16px;
  }
 }

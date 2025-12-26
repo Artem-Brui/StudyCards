@@ -1,10 +1,18 @@
 .card_item {
+  @include commonBorder(border);
+  border-radius: $radius-16;
+  display: grid;
+  box-shadow: 0.2rem 0.2rem 0.1rem 0rem;
+
+  
+
+
   &[data-version="list"] {
-    @include commonBorder(border);
+    & p {
+      text-align: left;
+    }
 
     height: max-content;
-    border-radius: $radius-16;
-    display: grid;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: max-content 1fr max-content;
 
@@ -12,10 +20,11 @@
       align-content: center;
     }
 
-    & > .question, & > .answer {
+    & > .question,
+    & > .answer {
       padding: 1.6rem;
     }
- 
+
     & .question {
       @include commonBorder(border-bottom);
       @include text-preset-4-semibold;
@@ -31,7 +40,7 @@
       min-height: 14rem;
 
       &::before {
-        content: 'Answer:';
+        content: "Answer:";
         display: block;
         opacity: 0.6;
         margin-bottom: 0.8rem;
@@ -66,6 +75,113 @@
       background-image: url("src/assets/icons/dots.svg");
       background-repeat: no-repeat;
       background-position: center;
+    }
+  }
+
+  &[data-version="study"] {
+    height: 36rem;
+    background-color: $pink-400;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr max-content;
+    padding: 2.4rem;
+    position: relative;
+
+    & p {
+      text-align: center;
+    }
+
+    &::after {
+      content: '';
+      width: 3rem;
+      height: 3rem;
+      display: block;
+      position: absolute;
+      top: 4rem;
+      right: 3rem;
+      background-image: url("src/assets/icons/star-blue.svg");
+      background-position: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  
+    &::before {
+      content: '';
+      width: 3rem;
+      height: 3rem;
+      display: block;
+      position: absolute;
+      bottom: 4rem;
+      left: 3rem;
+      background-image: url("src/assets/icons/star-yellow.svg");
+      background-position: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:has(.answer) {
+      background-color: $blue-400;
+
+      &::after {
+        background-image: url("src/assets/icons/star-pink.svg");
+      }
+    }
+
+    & > * {
+      align-content: center;
+      justify-self: center;
+    }
+
+    & .question {
+      @include text-preset-1;
+      grid-area: 2 / 1 / -1 / -1;
+
+      &::after {
+        @include text-preset-4-medium;
+
+        content: "Click to reveal answer";
+        display: block;
+        justify-self: center;
+        opacity: 0.6;
+      };
+
+      @include onTablet {
+        @include text-preset-1-tablet;
+      };
+
+      @include onMobile {
+        @include text-preset-1-mobile;
+      };
+    }
+
+    & .answer {
+      @include text-preset-2;
+      grid-area: 2 / 1 / -1 / -1;
+
+      &::before {
+        @include text-preset-4-medium;
+
+        content: "Answer:";
+        display: block;
+        opacity: 0.6;
+        justify-self: center;
+        margin-bottom: 1.6rem;
+      };
+    }
+
+    & .category {
+      @include commonBorder(border);
+      @include text-preset-6-regular;
+
+      grid-area: 1 / 1 / 1 / -1;
+      padding: 0.6rem 1.2rem;
+      border-radius: $radius-full;
+      background-color: $neutral-0;
+    }
+
+    & .progress {
+      @include text-preset-6-regular;
+
+      grid-area: 3 / 1 / 4 / -1;
     }
   }
 }
