@@ -19,6 +19,8 @@ body {
 
   padding: 1.2rem 2rem;
   border-radius: $radius-full;
+  display: flex;
+  align-items: center;
 
 
 
@@ -38,6 +40,9 @@ body {
     @include button_icon-side(right);
   }
 
+  &_icon_check {
+    @include button_icon_variant(check);
+  }
   &_icon_check-circle {
     @include button_icon_variant(check-circle);
   }
@@ -62,18 +67,6 @@ body {
   &_icon_shuffle {
     @include button_icon_variant(shuffle);
   }
-
-  // &_icon_check {
-  //   @include button_icon_variant(check);
-  // }
-
-  // &_icon_right {
-  //   @include button_icon_right;
-
-  //   &_#{icon-name} {
-  //     @include button_icon_name(#{icon-name});
-  //   }
-  // }
 }
 
 @include onTablet {

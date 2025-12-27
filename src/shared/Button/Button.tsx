@@ -7,8 +7,14 @@ export type ButtonStyle =
   | "button_shadow"
   | "button_icon-side_right"
   | "button_icon-side_left"
+  | "button_icon_check"
   | "button_icon_check-circle"
   | "button_icon_shuffle"
+  | "button_icon_angle-up"
+  | "button_icon_angle-down"
+  | "button_icon_angle-left"
+  | "button_icon_angle-right"
+  | "button_icon_undo-alt"
   | "button_icon_circle-plus";
 
 type Props = {
@@ -20,15 +26,9 @@ export const Button: React.FC<Props> = ({ buttonText, buttonStyles }) => {
   const styles = buttonStyles.reduce((acc, style) => {
     return {
       ...acc,
-      [style]: true
-    }
-  }, {})
+      [style]: true,
+    };
+  }, {});
 
-  return (
-    <button
-      className={classNames(styles)}
-    >
-      {buttonText}
-    </button>
-  );
+  return <button className={classNames(styles)}>{buttonText}</button>;
 };

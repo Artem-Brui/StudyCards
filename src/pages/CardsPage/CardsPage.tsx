@@ -1,14 +1,12 @@
-import { Header } from "@/components/Header/Header";
+import { CardControls } from "@/components/CardControls/CardControls";
 import { CardsList } from "@/components/CardsList/CardsList";
 
 function CardsPage() {
   return (
-    <>
-      <Header />
-      <main>
-        <CardsList />
-      </main>
-    </>
+    <main>
+      <CardControls />
+      <CardsList />
+    </main>
   );
 }
 
