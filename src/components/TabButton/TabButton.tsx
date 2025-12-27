@@ -5,11 +5,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import { Pages } from "@/pages/pageTypes";
 
 type Props = {
-  pageKey: keyof typeof Pages;
+  pageLink: keyof typeof Pages;
 };
 
-export const TabButton: React.FC<Props> = ({ pageKey }) => {
-  const pagePath = pageKey === "cards" ? pageKey : "";
+export const TabButton: React.FC<Props> = ({ pageLink }) => {
+  const pagePath = pageLink === "cards" ? pageLink : "";
   const location = useLocation().pathname.slice(1);
   const isHighlighted = pagePath === location;
 
@@ -21,7 +21,7 @@ export const TabButton: React.FC<Props> = ({ pageKey }) => {
         [styles.highlighted]: isHighlighted,
       })}
     >
-      {Pages[pageKey]}
+      {Pages[pageLink]}
     </NavLink>
   );
 };

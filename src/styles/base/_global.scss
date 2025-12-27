@@ -1,33 +1,93 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
- @include main-font;
-
- color: $neutral-900;
- display: flex;
- justify-content: center;
-
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 #root {
   width: 1240px;
- }
+}
+
+body {
+  @include main-font;
+
+  color: $neutral-900;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  @include commonBorder(border);
+
+  padding: 1.2rem 2rem;
+  border-radius: $radius-full;
+
+
+
+  &_shadow {
+    @include box-shadow;
+  }
+
+  &_colored {
+    background-color: $yellow-500;
+  }
+
+  &_icon-side_left {
+    @include button_icon-side(left);
+  }
+
+  &_icon-side_right {
+    @include button_icon-side(right);
+  }
+
+  &_icon_check-circle {
+    @include button_icon_variant(check-circle);
+  }
+  &_icon_angle-down {
+    @include button_icon_variant(angle-down);
+  }
+  &_icon_angle-up {
+    @include button_icon_variant(angle-up);
+  }
+  &_icon_angle-left {
+    @include button_icon_variant(angle-left);
+  }
+  &_icon_angle-right {
+    @include button_icon_variant(angle-right);
+  }
+  &_icon_undo-alt {
+    @include button_icon_variant(undo-alt);
+  }
+  &_icon_circle-plus {
+    @include button_icon_variant(circle-plus);
+  }
+  &_icon_shuffle {
+    @include button_icon_variant(shuffle);
+  }
+
+  // &_icon_check {
+  //   @include button_icon_variant(check);
+  // }
+
+  // &_icon_right {
+  //   @include button_icon_right;
+
+  //   &_#{icon-name} {
+  //     @include button_icon_name(#{icon-name});
+  //   }
+  // }
+}
 
 @include onTablet {
   #root {
     width: 768px;
     padding: 32px;
-   }
+  }
 }
 
 @include onMobile {
- body {
-
- & > #root {
-  width: 375px;
-  padding: 16px;
- }
-}
+  body {
+    & > #root {
+      width: 375px;
+      padding: 16px;
+    }
+  }
 }

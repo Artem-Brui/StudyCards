@@ -1,12 +1,11 @@
 .card_item {
   @include commonBorder(border);
+  @include box-shadow;
+
   border-radius: $radius-16;
   display: grid;
-  box-shadow: 0.2rem 0.2rem 0.1rem 0rem;
 
   
-
-
   &[data-version="list"] {
     & p {
       text-align: left;

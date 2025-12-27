@@ -110,3 +110,43 @@
 }
 
 // OTHERS
+@mixin button_icon_properties {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  transform: scale(1.4);
+  padding-block: 0;
+  background-position: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin button_icon-side($side) {
+  @if ($side == "left") {
+    &::before {
+      @include button_icon_properties;
+
+      margin-right: 0.8rem;
+    }
+  }
+
+  @if ($side == "right") {
+    &::after {
+      @include button_icon_properties;
+
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+@mixin button_icon_variant($IconName) {
+  &::before,
+  &::after {
+    background-image: url("@/assets/icons/#{$IconName}.svg");
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0.15rem 0.15rem 0.05rem 0rem;
+}
