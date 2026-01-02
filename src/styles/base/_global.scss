@@ -14,6 +14,12 @@ body {
   justify-content: center;
 }
 
+section {
+   & > * {
+    padding-block: 1.2rem;
+   }
+}
+
 .button {
   @include commonBorder(border);
 

@@ -1,17 +1,13 @@
 import type React from "react";
 import styles from "./CardControls.module.scss";
-import { Button, type ButtonStyle } from "@/shared/Button/Button";
+import { Button } from "@/shared/Button/Button";
+import type { ButtonStylesType } from "@/types/types";
 
-interface ButtonStylesType {
-  categories: ButtonStyle[];
-  shuffle: ButtonStyle[];
+type Props = {
+  buttonStyles: ButtonStylesType;
 }
 
-export const CardControls: React.FC = () => {
-  const buttonStyles: ButtonStylesType = {
-    categories: ["button", "button_icon-side_right", "button_icon_angle-down"],
-    shuffle: ["button", "button_icon-side_left", "button_icon_shuffle"],
-  };
+export const CardControls: React.FC<Props> = ({buttonStyles}) => {
 
   return (
     <div className={styles.card_controls}>

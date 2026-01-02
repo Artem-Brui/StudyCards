@@ -1,42 +1,28 @@
 import type React from "react";
 import styles from "./StudySection.module.scss";
 import { CardItem } from "../CardItem/CardItem";
-import type { CardItemType } from "@/assets/base/base";
-import base from "@/assets/base/base.json";
-import { Button, type ButtonStyle } from "@/shared/Button/Button";
+import { Button } from "@/shared/Button/Button";
 import { CardControls } from "../CardControls/CardControls";
-
-const cards: CardItemType[] = base;
-
-interface ButtonStylesType {
-  categories: ButtonStyle[];
-  shuffle: ButtonStyle[];
-  know: ButtonStyle[];
-  reset: ButtonStyle[];
-  previous: ButtonStyle[];
-  next: ButtonStyle[];
-}
+import { buttonStyles } from "@/service/service";
+import { useCardsList } from "@/app/customHooks/useCardsList";
 
 export const StudySection: React.FC = () => {
-  const buttonStyles: ButtonStylesType = {
-    categories: ["button", "button_icon-side_right", "button_icon_angle-down"],
-    shuffle: ["button", "button_icon-side_left", "button_icon_shuffle"],
-    know: ["button", "button_colored", "button_shadow", "button_icon-side_left", "button_icon_check-circle"],
-    reset: ["button", "button_shadow", "button_icon-side_left", "button_icon_undo-alt"],
-    previous: ["button", "button_icon-side_left", "button_icon_angle-left"],
-    next: ["button", "button_icon-side_right", "button_icon_angle-right"],
-  };
+  const fetchedCards = useCardsList();
+  const cards = fetchedCards ? fetchedCards : [];
 
   return (
     <section className={styles.study_section}>
-      <CardControls />
+      <CardControls buttonStyles={buttonStyles} />
 
       <div className={styles.card_studying}>
         <CardItem cardVersion="study" card={cards[5]} />
 
         <div className={styles.card_studying_buttons}>
           <Button buttonText="I Know This" buttonStyles={buttonStyles.know} />
-          <Button buttonText="Reset Progress" buttonStyles={buttonStyles.reset} />
+          <Button
+            buttonText="Reset Progress"
+            buttonStyles={buttonStyles.reset}
+          />
         </div>
       </div>
 
