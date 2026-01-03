@@ -14,64 +14,17 @@ body {
   justify-content: center;
 }
 
-section {
-   & > * {
-    padding-block: 1.2rem;
-   }
-}
-
-.button {
-  @include commonBorder(border);
-
-  padding: 1.2rem 2rem;
-  border-radius: $radius-full;
+main[data-page='study'] {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  gap: 3.2rem;
 
-
-
-  &_shadow {
-    @include box-shadow;
+  & > section[data-section='statistics'] {
+    flex-basis: 40rem;
   }
-
-  &_colored {
-    background-color: $yellow-500;
-  }
-
-  &_icon-side_left {
-    @include button_icon-side(left);
-  }
-
-  &_icon-side_right {
-    @include button_icon-side(right);
-  }
-
-  &_icon_check {
-    @include button_icon_variant(check);
-  }
-  &_icon_check-circle {
-    @include button_icon_variant(check-circle);
-  }
-  &_icon_angle-down {
-    @include button_icon_variant(angle-down);
-  }
-  &_icon_angle-up {
-    @include button_icon_variant(angle-up);
-  }
-  &_icon_angle-left {
-    @include button_icon_variant(angle-left);
-  }
-  &_icon_angle-right {
-    @include button_icon_variant(angle-right);
-  }
-  &_icon_undo-alt {
-    @include button_icon_variant(undo-alt);
-  }
-  &_icon_circle-plus {
-    @include button_icon_variant(circle-plus);
-  }
-  &_icon_shuffle {
-    @include button_icon_variant(shuffle);
+  
+  & > section[data-section='study'] {
+    flex-basis: 100%;
   }
 }
 
@@ -80,6 +33,15 @@ section {
     width: 768px;
     padding: 32px;
   }
+
+  main[data-page='study'] {
+    flex-wrap: wrap;
+    gap: 2.4rem;
+
+    & > section[data-section='statistics'] {
+      flex-basis: 100%;
+    }
+  }
 }
 
 @include onMobile {
@@ -87,6 +49,15 @@ section {
     & > #root {
       width: 375px;
       padding: 16px;
+    }
+  }
+
+  main[data-page='study'] {
+    flex-wrap: wrap;
+    gap: 2.4rem;
+
+    & > section[data-section='statistics'] {
+      flex-basis: 100%;
     }
   }
 }

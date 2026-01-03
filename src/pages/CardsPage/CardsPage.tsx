@@ -1,16 +1,9 @@
-import { CardControls } from "@/components/CardControls/CardControls";
-import { CardsList } from "@/components/CardsList/CardsList";
-import { buttonStyles } from "@/service/service";
+import { SectionCards } from "@/components/SectionCards/SectionCards";
 
-function CardsPage() {
+export const CardsPage = () => {
   return (
     <main>
-      <section>
-        <CardControls buttonStyles={buttonStyles} />
-        <CardsList />
-      </section>
+      <SectionCards />
     </main>
   );
 }
-
-export default CardsPage;

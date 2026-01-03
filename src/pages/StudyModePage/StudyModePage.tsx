@@ -1,9 +1,11 @@
-import { StudySection } from "@/components/StudySection/StudySection";
+import { SectionStatisticBar } from "@/components/SectionStatistic/SectionStatisticBar";
+import { SectionStudy } from "@/components/SectionStudy/SectionStudy";
 
 function StudyModePage() {
   return (
-    <main>
-      <StudySection />
+    <main data-page='study'>
+      <SectionStudy />
+      <SectionStatisticBar />
     </main>
   );
 }

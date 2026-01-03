@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import StudyModePage from "@/pages/StudyModePage/StudyModePage";
-import CardsPage from "@/pages/CardsPage/CardsPage";
+import { CardsPage } from "@/pages/CardsPage/CardsPage";
 import RootLayout from "./RootLayout";
 
 function RouterProvider() {

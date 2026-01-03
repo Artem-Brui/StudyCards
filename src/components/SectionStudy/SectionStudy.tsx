@@ -1,17 +1,17 @@
 import type React from "react";
-import styles from "./StudySection.module.scss";
+import styles from "./SectionStudy.module.scss";
 import { CardItem } from "../CardItem/CardItem";
 import { Button } from "@/shared/Button/Button";
 import { CardControls } from "../CardControls/CardControls";
 import { buttonStyles } from "@/service/service";
 import { useCardsList } from "@/app/customHooks/useCardsList";
 
-export const StudySection: React.FC = () => {
+export const SectionStudy: React.FC = () => {
   const fetchedCards = useCardsList();
   const cards = fetchedCards ? fetchedCards : [];
 
   return (
-    <section className={styles.study_section}>
+    <section className={styles.study_section} data-section='study'>
       <CardControls buttonStyles={buttonStyles} />
 
       <div className={styles.card_studying}>

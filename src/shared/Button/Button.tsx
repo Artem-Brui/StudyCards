@@ -1,4 +1,5 @@
 import type { ButtonStyle } from "@/types/types";
+import "./Button.scss";
 import classNames from "classnames";
 import type React from "react";
 
