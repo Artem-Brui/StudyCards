@@ -1,13 +1,13 @@
 [
-  { "id": 1, "category": "HTML", "question": "What does HTML stand for?", "answer": "HTML stands for HyperText Markup Language.", "mastered": false },
+  { "id": 1, "category": "HTML", "question": "What does HTML stand for?", "answer": "HTML stands for HyperText Markup Language.", "mastered": true },
   { "id": 2, "category": "HTML", "question": "What is the purpose of HTML?", "answer": "HTML is used to structure content on the web.", "mastered": true },
-  { "id": 3, "category": "HTML", "question": "What is a semantic HTML element?", "answer": "A semantic element clearly describes its meaning to both browser and developer.", "mastered": false },
-  { "id": 4, "category": "HTML", "question": "What does the head element contain?", "answer": "Metadata, links to styles, scripts, and the document title.", "mastered": false },
-  { "id": 5, "category": "HTML", "question": "What is the div element used for?", "answer": "It is a generic container for grouping content.", "mastered": true },
-  { "id": 6, "category": "HTML", "question": "What is the span element?", "answer": "An inline container used to style or manipulate text.", "mastered": false },
-  { "id": 7, "category": "HTML", "question": "What is the purpose of the alt attribute?", "answer": "It provides alternative text for images for accessibility.", "mastered": false },
-  { "id": 8, "category": "HTML", "question": "What is the difference between section and article?", "answer": "Article is independent content, section is a thematic grouping.", "mastered": false },
-  { "id": 9, "category": "HTML", "question": "What does the DOCTYPE declaration do?", "answer": "It tells the browser to use HTML5 standards.", "mastered": false },
+  { "id": 3, "category": "HTML", "question": "What is a semantic HTML element?", "answer": "A semantic element clearly describes its meaning to both browser and developer.", "mastered": true },
+  { "id": 4, "category": "HTML", "question": "What does the head element contain?", "answer": "Metadata, links to styles, scripts, and the document title.", "mastered": true },
+  { "id": 5, "category": "HTML", "question": "What is the div element used for?", "answer": "It is a generic container for grouping content.", "mastered": false },
+  { "id": 6, "category": "HTML", "question": "What is the span element?", "answer": "An inline container used to style or manipulate text.", "mastered": true },
+  { "id": 7, "category": "HTML", "question": "What is the purpose of the alt attribute?", "answer": "It provides alternative text for images for accessibility.", "mastered": true },
+  { "id": 8, "category": "HTML", "question": "What is the difference between section and article?", "answer": "Article is independent content, section is a thematic grouping.", "mastered": true },
+  { "id": 9, "category": "HTML", "question": "What does the DOCTYPE declaration do?", "answer": "It tells the browser to use HTML5 standards.", "mastered": true },
   { "id": 10, "category": "HTML", "question": "What is an HTML attribute?", "answer": "It provides additional information about an element.", "mastered": true },
 
   { "id": 11, "category": "CSS", "question": "What does CSS stand for?", "answer": "CSS stands for Cascading Style Sheets.", "mastered": false },
@@ -74,6 +74,8 @@
   { "id": 67, "category": "Redux", "question": "What is useSelector?", "answer": "A hook to read store data.", "mastered": false },
   { "id": 68, "category": "Redux", "question": "What is useDispatch?", "answer": "A hook to dispatch actions.", "mastered": false },
   { "id": 69, "category": "Redux", "question": "What is middleware?", "answer": "Code between dispatch and reducer.", "mastered": false },
-  { "id": 70, "category": "Redux", "question": "Why use Redux?", "answer": "To manage complex global state.", "mastered": false }
+  { "id": 70, "category": "Redux", "question": "Why use Redux?", "answer": "To manage complex global state.", "mastered": false },
+  { "id": 71, "category": "HTML", "question": "Why use Redux?", "answer": "To manage complex global state.", "mastered": true },
+  { "id": 72, "category": "HTML", "question": "Why use Redux?", "answer": "To manage complex global state.", "mastered": true }
 ]
 

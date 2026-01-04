@@ -1,0 +1,39 @@
+.progress_bar {
+  @include text-preset-6-regular;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  & > .button_individual {
+    padding: 0.6rem 1.2rem;
+    background-color: $teal-400
+  }
+}
+
+.icon {
+  @include commonBorder(border);
+
+  width: 6rem;
+  height: 0.8rem;
+  border-radius: $radius-full;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+
+@for $selector from 1 to 101 {
+  .percent_#{$selector} {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: $selector * 1%;
+      height: 100%;
+      background-color: $neutral-900;
+      position: absolute;
+      left: 0;
+    }
+  }
+}

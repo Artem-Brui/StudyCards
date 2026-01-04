@@ -60,18 +60,8 @@
 
 @each $icon, $bg-color in $statistics-bar-icons {
   .#{$icon} {
+    background-color: $bg-color;
     background-image: url("@/assets/icons/#{$icon}.svg");
-    position: relative;
-
-    &::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      display: block;
-      background-color: $bg-color;
-      position: relative;
-      z-index: -1;
-    }
   }
 }
 

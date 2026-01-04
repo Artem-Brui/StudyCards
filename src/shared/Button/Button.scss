@@ -27,28 +27,39 @@
   &_icon_check {
     @include button_icon_variant(check);
   }
+
   &_icon_check-circle {
     @include button_icon_variant(check-circle);
   }
+
   &_icon_angle-down {
     @include button_icon_variant(angle-down);
   }
+
   &_icon_angle-up {
     @include button_icon_variant(angle-up);
   }
+
   &_icon_angle-left {
     @include button_icon_variant(angle-left);
   }
+
   &_icon_angle-right {
     @include button_icon_variant(angle-right);
   }
+
   &_icon_undo-alt {
     @include button_icon_variant(undo-alt);
   }
+
   &_icon_circle-plus {
     @include button_icon_variant(circle-plus);
   }
   &_icon_shuffle {
     @include button_icon_variant(shuffle);
+  }
+
+  &_icon_brain-solid {
+    @include button_icon_variant(brain-solid);
   }
 }

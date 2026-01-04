@@ -12,6 +12,7 @@ export type ButtonStyle =
   | "button_icon_angle-left"
   | "button_icon_angle-right"
   | "button_icon_undo-alt"
+  | "button_icon_brain-solid"
   | "button_icon_circle-plus";
 
 export type ButtonStylesType = {

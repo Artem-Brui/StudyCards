@@ -56,7 +56,7 @@
       border-radius: $radius-full;
     }
 
-    & .progress {
+    & div[data-element='progress-bar'] {
       @include commonBorder(border-right);
       @include commonBorder(border-left);
       @include text-preset-6-regular;
