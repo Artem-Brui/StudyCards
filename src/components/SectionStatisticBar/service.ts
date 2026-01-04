@@ -1,15 +1,11 @@
 import type { CardItemType } from "@/assets/base/base";
-import layers from '@//assets/icons/layers.svg';
-import brain from '@//assets/icons/brain.svg';
-import book from '@//assets/icons/book.svg';
-import box from '@//assets/icons/box.svg';
 
 export const getStatisticBarData = (cards: CardItemType[]) => {
   const barDataItems = [
-    { title: "Total cards", value: 0, icon: layers },
-    { title: "Mastered", value: 0, icon: brain },
-    { title: "In Progress", value: 0, icon: book },
-    { title: "Not Started", value: 0, icon: box },
+    { title: "Total cards", value: 0, icon: 'layers' },
+    { title: "Mastered", value: 0, icon: 'brain' },
+    { title: "In Progress", value: 0, icon: 'book' },
+    { title: "Not Started", value: 0, icon: 'box' },
   ];
 
   for (let i = 0; i < barDataItems.length; i++) {

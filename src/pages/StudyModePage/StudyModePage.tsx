@@ -1,4 +1,4 @@
-import { SectionStatisticBar } from "@/components/SectionStatistic/SectionStatisticBar";
+import { SectionStatisticBar } from "@/components/SectionStatisticBar/SectionStatisticBar";
 import { SectionStudy } from "@/components/SectionStudy/SectionStudy";
 
 function StudyModePage() {

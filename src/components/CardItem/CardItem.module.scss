@@ -142,14 +142,6 @@
         justify-self: center;
         opacity: 0.6;
       };
-
-      @include onTablet {
-        @include text-preset-1-tablet;
-      };
-
-      @include onMobile {
-        @include text-preset-1-mobile;
-      };
     }
 
     & .answer {

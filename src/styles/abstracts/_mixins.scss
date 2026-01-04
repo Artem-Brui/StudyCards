@@ -3,7 +3,9 @@
 // media
 @mixin onTablet {
   @media (max-width: 1239px) {
-    @content;
+    @media (min-width: 768px) {
+      @content;
+    }
   }
 }
 
@@ -37,20 +39,14 @@
   @include font-spaces-120();
   font-size: 4rem;
   font-weight: 700;
-}
 
-@mixin text-preset-1-tablet {
-  @include main-font();
-  @include font-spaces-120();
-  font-size: 3.2rem;
-  font-weight: 700;
-}
+  @include onTablet() {
+    font-size: 3.2rem;
+  }
 
-@mixin text-preset-1-mobile {
-  @include main-font();
-  @include font-spaces-120();
-  font-size: 2.4rem;
-  font-weight: 700;
+  @include onMobile() {
+    font-size: 2.4rem;
+  }
 }
 
 @mixin text-preset-2 {
@@ -149,5 +145,23 @@
 
 @mixin box-shadow {
   box-shadow: 0.15rem 0.15rem 0.05rem 0rem;
+}
+
+@mixin section-items-space-between {
+  & > *:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+
+  @include onMobile() {
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  @include onTablet() {
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
 }
 

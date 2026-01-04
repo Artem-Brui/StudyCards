@@ -34,10 +34,12 @@ $pink-400: var(--pink-400);
 $pink-500: var(--pink-500);
 $pink-700: var(--pink-700);
 
-$icon-layers-background-color: $blue-400;
-$icon-brain-background-color: $teal-400;
-$icon-book-background-color: $pink-500;
-$icon-box-background-color: $pink-400;
+$statistics-bar-icons: (
+  layers: $blue-400,
+  brain: $teal-400,
+  book: $pink-500,
+  box: $pink-400,
+);
 
 // radius
 $radius-0: 0;

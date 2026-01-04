@@ -1,9 +1,11 @@
 .study_section {
   @include commonBorder(border);
   @include box-shadow;
+  @include section-items-space-between;
 
   border-radius: $radius-16;
-  padding-inline: 1.6rem;
+  padding: 1.6rem;
+  gap: 4rem;
 }
 
 .card_controls {
