@@ -17,7 +17,7 @@ export const CardItem: React.FC<СardComponentProps> = ({
   card,
 }) => {
   const [answerSwitcher, setAnswerSwitcher] = useState(false);
-  const [isControlMenu, setIsControlMenu] = useState(true);
+  const [isControlMenu, setIsControlMenu] = useState(false);
 
   const { question, answer, category } = card;
   const isListPage = cardVersion === "list";
@@ -32,7 +32,9 @@ export const CardItem: React.FC<СardComponentProps> = ({
 
   return (
     <article
-      className={classNames(styles.card_item, { [styles.covered]: isControlMenu })}
+      className={classNames(styles.card_item, {
+        [styles.covered]: isControlMenu,
+      })}
       data-version={cardVersion}
       onClick={handleCardClick}
     >
@@ -40,11 +42,26 @@ export const CardItem: React.FC<СardComponentProps> = ({
       {isAnswerVisibile && <p className={styles.answer}>{answer}</p>}
       <p className={styles.category}>{category}</p>
       <ProgressBar card={card} />
-      {isListPage && <button className={styles.service_button}></button>}
+      {isListPage && (
+        <button
+          onClick={() => setIsControlMenu((x) => !x)}
+          className={styles.service_button}
+        ></button>
+      )}
       {isListPage && isControlMenu && (
         <div className={styles.control_menu}>
-          <button className={styles.control_menu_button} data-card_control='edit'>Edit</button>
-          <button className={styles.control_menu_button} data-card_control='delete'>Delete</button>
+          <button
+            className={styles.control_menu_button}
+            data-card_control="edit"
+          >
+            Edit
+          </button>
+          <button
+            className={styles.control_menu_button}
+            data-card_control="delete"
+          >
+            Delete
+          </button>
         </div>
       )}
     </article>
