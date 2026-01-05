@@ -1,13 +1,9 @@
 import type React from "react";
 import styles from "./CardControls.module.scss";
 import { Button } from "@/shared/Button/Button";
-import type { ButtonStylesType } from "@/types/types";
+import { buttonStyles } from "@/shared/Button/service";
 
-type Props = {
-  buttonStyles: ButtonStylesType;
-}
-
-export const CardControls: React.FC<Props> = ({buttonStyles}) => {
+export const CardControls: React.FC = () => {
 
   return (
     <div className={styles.card_controls}>

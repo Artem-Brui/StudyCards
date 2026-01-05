@@ -118,6 +118,13 @@
   background-repeat: no-repeat;
 }
 
+@mixin button($padding) {
+  padding: $padding;
+  border-radius: $radius-full;
+  display: flex;
+  align-items: center;
+}
+
 @mixin button_icon-side($side) {
   @if ($side == "left") {
     &::before {

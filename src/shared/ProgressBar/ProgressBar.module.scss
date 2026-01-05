@@ -5,9 +5,14 @@
   align-items: center;
   gap: 0.8rem;
 
-  & > .button_individual {
-    padding: 0.6rem 1.2rem;
-    background-color: $teal-400
+  & > .button {
+    @include commonBorder(border);
+    @include button(0.6rem 1.2rem);
+    @include button_icon-side(left);
+    @include button_icon_variant(brain-solid);
+
+    background-color: $teal-400;
+    box-shadow: 0.1rem 0.1rem 0.05rem 0rem;
   }
 }
 
@@ -21,13 +26,12 @@
   overflow: hidden;
 }
 
-
 @for $selector from 1 to 101 {
   .percent_#{$selector} {
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       display: block;
       width: $selector * 1%;
       height: 100%;

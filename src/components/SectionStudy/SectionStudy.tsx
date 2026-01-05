@@ -3,7 +3,7 @@ import styles from "./SectionStudy.module.scss";
 import { CardItem } from "../CardItem/CardItem";
 import { Button } from "@/shared/Button/Button";
 import { CardControls } from "../CardControls/CardControls";
-import { buttonStyles } from "@/service/service";
+import { buttonStyles } from "@/shared/Button/service";
 import { useCardsList } from "@/app/customHooks/useCardsList";
 
 export const SectionStudy: React.FC = () => {
@@ -11,8 +11,8 @@ export const SectionStudy: React.FC = () => {
   const cards = fetchedCards ? fetchedCards : [];
 
   return (
-    <section className={styles.study_section} data-section='study'>
-      <CardControls buttonStyles={buttonStyles} />
+    <section className={styles.study_section} data-section="study">
+      <CardControls />
 
       <div className={styles.card_studying}>
         <CardItem cardVersion="study" card={cards[5]} />

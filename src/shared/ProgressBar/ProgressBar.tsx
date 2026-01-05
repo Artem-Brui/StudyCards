@@ -3,7 +3,6 @@ import styles from "./ProgressBar.module.scss";
 import type React from "react";
 import { useCardsList } from "@/app/customHooks/useCardsList";
 import classNames from "classnames";
-import type { ButtonStyle } from "@/types/types";
 
 type Props = {
   card: CardItemType;
@@ -13,28 +12,21 @@ export const ProgressBar: React.FC<Props> = ({ card }) => {
   const cards = useCardsList();
   const isGotData = cards !== undefined && card !== undefined;
   const isMastered = card.mastered;
-  const cardsByCategoryAmount = isGotData
-    ? cards.filter((item) => item.category === card.category).length
-    : 0;
-  const masteredCardsAmount = isGotData
-    ? cards.filter((item) => item.category === card.category && item.mastered)
-        .length
-    : 0;
+
+  const amount = {
+    full: isGotData
+      ? cards.filter((item) => item.category === card.category).length
+      : 0,
+    mastered: isGotData
+      ? cards.filter((item) => item.category === card.category && item.mastered)
+          .length
+      : 0,
+  };
   const completionPercent = Math.floor(
-    (masteredCardsAmount / cardsByCategoryAmount) * 100
+    (amount.mastered / amount.full) * 100
   ).toString();
 
-  const progressBarText = isMastered
-    ? `Mastered ${masteredCardsAmount} / ${cardsByCategoryAmount}`
-    : `${masteredCardsAmount} / ${cardsByCategoryAmount}`;
-
-  const buttonStyles: ButtonStyle[] = [
-    "button",
-    "button_colored",
-    "button_icon-side_left",
-    "button_shadow",
-    "button_icon_brain-solid",
-  ];
+  const barText = amount.mastered + "/" + amount.full;
 
   return (
     <div className={styles.progress_bar} data-element="progress-bar">
@@ -48,11 +40,10 @@ export const ProgressBar: React.FC<Props> = ({ card }) => {
       <p
         className={classNames(
           styles.value,
-          {[styles.button_individual] : isMastered},
-          ...(isMastered ? buttonStyles : [])
+          { [styles.button]: isMastered },
         )}
       >
-        {progressBarText}
+        {isMastered ? `Mastered ${barText}` : barText}
       </p>
     </div>
   );

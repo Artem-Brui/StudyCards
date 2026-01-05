@@ -3,6 +3,7 @@ import styles from "./CardItem.module.scss";
 import type { CardItemType } from "@/assets/base/base";
 import { useState } from "react";
 import { ProgressBar } from "@/shared/ProgressBar/ProgressBar";
+import classNames from "classnames";
 
 export type CardVersionType = "list" | "study";
 
@@ -16,6 +17,7 @@ export const CardItem: React.FC<СardComponentProps> = ({
   card,
 }) => {
   const [answerSwitcher, setAnswerSwitcher] = useState(false);
+  const [isControlMenu, setIsControlMenu] = useState(true);
 
   const { question, answer, category } = card;
   const isListPage = cardVersion === "list";
@@ -30,7 +32,7 @@ export const CardItem: React.FC<СardComponentProps> = ({
 
   return (
     <article
-      className={styles.card_item}
+      className={classNames(styles.card_item, { [styles.covered]: isControlMenu })}
       data-version={cardVersion}
       onClick={handleCardClick}
     >
@@ -39,6 +41,12 @@ export const CardItem: React.FC<СardComponentProps> = ({
       <p className={styles.category}>{category}</p>
       <ProgressBar card={card} />
       {isListPage && <button className={styles.service_button}></button>}
+      {isListPage && isControlMenu && (
+        <div className={styles.control_menu}>
+          <button className={styles.control_menu_button} data-card_control='edit'>Edit</button>
+          <button className={styles.control_menu_button} data-card_control='delete'>Delete</button>
+        </div>
+      )}
     </article>
   );
 };

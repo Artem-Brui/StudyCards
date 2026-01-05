@@ -1,6 +1,6 @@
 [
   { "id": 1, "category": "HTML", "question": "What does HTML stand for?", "answer": "HTML stands for HyperText Markup Language.", "mastered": true },
-  { "id": 2, "category": "HTML", "question": "What is the purpose of HTML?", "answer": "HTML is used to structure content on the web.", "mastered": true },
+  { "id": 2, "category": "HTML", "question": "What is the purpose of HTML?", "answer": "HTML is used to structure content on the web.", "mastered": false },
   { "id": 3, "category": "HTML", "question": "What is a semantic HTML element?", "answer": "A semantic element clearly describes its meaning to both browser and developer.", "mastered": true },
   { "id": 4, "category": "HTML", "question": "What does the head element contain?", "answer": "Metadata, links to styles, scripts, and the document title.", "mastered": true },
   { "id": 5, "category": "HTML", "question": "What is the div element used for?", "answer": "It is a generic container for grouping content.", "mastered": false },

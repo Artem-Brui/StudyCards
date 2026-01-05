@@ -1,12 +1,9 @@
 .button {
-  @include commonBorder(border);
+  @include button(1.2rem 2rem);
 
-  padding: 1.2rem 2rem;
-  border-radius: $radius-full;
-  display: flex;
-  align-items: center;
-
-
+  &_border {
+    @include commonBorder(border);
+  }
 
   &_shadow {
     @include box-shadow;

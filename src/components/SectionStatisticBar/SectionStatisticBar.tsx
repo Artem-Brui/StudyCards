@@ -7,10 +7,7 @@ import classNames from "classnames";
 export const SectionStatisticBar: React.FC = () => {
   const fetchedCards = useCardsList();
   const cards = fetchedCards ? fetchedCards : [];
-
   const statisticBarData = getStatisticBarData(cards);
-
-  console.log(statisticBarData);
 
   return (
     <section className={styles.stat_bar_section} data-section="statistics">
