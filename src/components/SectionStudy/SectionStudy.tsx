@@ -1,36 +1,48 @@
 import type React from "react";
 import styles from "./SectionStudy.module.scss";
 import { CardItem } from "../CardItem/CardItem";
-import { Button } from "@/shared/Button/Button";
+// import { Button } from "@/shared/Button/Button";
 import { CardControls } from "../CardControls/CardControls";
-import { buttonStyles } from "@/shared/Button/service";
+// import { buttonStyles } from "@/shared/Button/service";
 import { useCardsList } from "@/app/customHooks/useCardsList";
+import type { CardItemType } from "@/assets/base/base";
+import { buttonStyles } from "@/shared/service";
+import classNames from "classnames";
+import { ErrorComponent } from "../ErrorComponent/ErrorComponent";
 
 export const SectionStudy: React.FC = () => {
   const fetchedCards = useCardsList();
-  const cards = fetchedCards ? fetchedCards : [];
 
-  return (
+  const cardToShow = (cards: CardItemType[]) => {
+    return cards[5];
+  };
+
+  return fetchedCards !== null ? (
     <section className={styles.study_section} data-section="study">
-      <CardControls />
+      <CardControls cards={fetchedCards} />
 
       <div className={styles.card_studying}>
-        <CardItem cardVersion="study" card={cards[5]} />
+        <CardItem cardVersion="study" card={cardToShow(fetchedCards)} />
 
         <div className={styles.card_studying_buttons}>
-          <Button buttonText="I Know This" buttonStyles={buttonStyles.know} />
-          <Button
-            buttonText="Reset Progress"
-            buttonStyles={buttonStyles.reset}
-          />
+          <button className={classNames(buttonStyles.know)}>
+            {"I Know This"}
+          </button>
+          <button className={classNames(buttonStyles.reset)}>
+            {"Reset Progress"}
+          </button>
         </div>
       </div>
 
       <div className={styles.card_pagination}>
-        <Button buttonText="Previous" buttonStyles={buttonStyles.previous} />
+        <button className={classNames(buttonStyles.previous)}>
+          {"Previous"}
+        </button>
         <p>Card 1 of 45</p>
-        <Button buttonText="Next" buttonStyles={buttonStyles.next} />
+        <button className={classNames(buttonStyles.next)}>{"Next"}</button>
       </div>
     </section>
+  ) : (
+    <ErrorComponent />
   );
 };

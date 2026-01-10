@@ -13,6 +13,7 @@
 .card_controls {
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   & > div:nth-child(1) {
     display: flex;
@@ -25,40 +26,56 @@
   }
 }
 
+.categories_list {
+  @include commonBorder(border);
+
+  border-radius: $radius-8;
+  background-color: white;
+  position: absolute;
+  top: 110%;
+
+
+  z-index: 1;
+  width: max-content;
+
+  & .category_item {
+    @include checkBox;
+
+    padding: 1rem 1.6rem;
+
+    &:not(:last-child) {
+      @include commonBorder(border-bottom);
+    }
+
+    & .cards_amount {
+      color: $neutral-600;
+    }
+
+    & input[type="checkbox"] {
+      transform: scale(1.2);
+
+      &:checked {
+        box-shadow: none;
+      }
+    }
+  }
+
+  & label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+
 .hide_checkbox {
+  @include checkBox;
+
   display: flex;
   align-items: center;
   gap: 0.8rem;
 
   & > p {
     line-height: 0.35rem;
-  }
-
-  & > input[type="checkbox"] {
-    @include commonBorder(border);
-
-    appearance: none;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 0.4rem;
-    background-color: white;
-
-    &:checked {
-      @include box-shadow;
-
-      background-color: $yellow-500;
-
-      &::after {
-        content: "";
-        display: block;
-        width: 1em;
-        height: 1em;
-        background-image: url("@/assets/icons/check.svg");
-        background-repeat: no-repeat;
-        background-position: 50% 40%;
-        background-size: 70%;
-      }
-    }
   }
 }
 
@@ -76,6 +93,9 @@
   margin-top: 2rem;
 }
 
+.off {
+  display: none;
+}
 
 /// MOBILE
 @include onMobile {

@@ -4,4 +4,4 @@ export type CardItemType = {
  question: string,
  answer: string,
  mastered: boolean,
-}
+};

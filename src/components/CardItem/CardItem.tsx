@@ -44,7 +44,8 @@ export const CardItem: React.FC<СardComponentProps> = ({
       <ProgressBar card={card} />
       {isListPage && (
         <button
-          onClick={() => setIsControlMenu((x) => !x)}
+      onClick={() => setIsControlMenu((x) => !x)}
+      onBlur={() => setIsControlMenu((x) => !x)}
           className={styles.service_button}
         ></button>
       )}

@@ -172,3 +172,32 @@
   }
 }
 
+@mixin checkBox {
+ & input[type="checkbox"] {
+    @include commonBorder(border);
+
+    appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 0.4rem;
+    background-color: white;
+
+    &:checked {
+      @include box-shadow;
+
+      background-color: $yellow-500;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 1em;
+        height: 1em;
+        background-image: url("@/assets/icons/check.svg");
+        background-repeat: no-repeat;
+        background-position: 50% 40%;
+        background-size: 70%;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,16 @@
+.tab {
+ width: max-content;
+ height: 100%;
+ padding: 0.5rem;
+ border: 0.1rem solid $neutral-900;
+ border-radius: $radius-full;
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}
+
+@include onMobile {
+ .tab {
+  gap: 0.3rem;
+ }
+}
